@@ -19,6 +19,6 @@ public class CallbackController {
 
     @PostMapping
     public String confirmation(@RequestBody CallbackDto callbackDto) {
-        return repeaterService.confirmation(callbackDto);
+        return repeaterService.callBackProcessor(callbackDto);
     }
 }

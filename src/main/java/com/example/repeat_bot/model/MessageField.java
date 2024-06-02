@@ -4,12 +4,12 @@ import lombok.Data;
 
 
 /**
- *
+ * Используется в качестве поля в {@link ObjectWithMessage}
  */
 @Data
 public class MessageField {
     private Long date;
-    private Long from;
+    private Long from_id;
     private Long id;
     private Long out;
     private Long version;
