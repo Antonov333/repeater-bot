@@ -33,7 +33,7 @@ public class RepeaterService {
     /**
      * This method is invoked to process call back from VK
      * @param callbackDto {@link CallbackDto} request body sent from VK
-     * @return callback confirmation String as required by VK if callback not confirmed, while "ok" upon callBackProcessor completed
+     * @return callback callbackReceiver String as required by VK if callback not confirmed, while "ok" upon callBackProcessor completed
      */
     public String callBackProcessor(CallbackDto callbackDto) {
         String responseString;
@@ -68,7 +68,7 @@ public class RepeaterService {
             return;
         }
 
-        messageText = StringUtils.replaceIgnoreCase(messageText, " ", "%20");
+        messageText = StringUtils.replaceIgnoreCase(messageText, " ", "+");
 
         String url = UrlForPostingMessageTemplate.builder()
                 .portalHome(PORTAL_LOCATION)
@@ -92,8 +92,8 @@ public class RepeaterService {
     }
 
     /**
-     * To obtain VK callBack server confirmation it is required to return some string specified by portal.
-     * Upon callBack confirmation completed "ok" must be returned to any request from VK
+     * To obtain VK callBack server callbackReceiver it is required to return some string specified by portal.
+     * Upon callBack callbackReceiver completed "ok" must be returned to any request from VK
      *
      * @param callbackDto value from CallbackDto {@link CallbackDto}
      * @return String required by VK to complete callBackProcessor or "ok" upon callBackProcessor completed<br>
