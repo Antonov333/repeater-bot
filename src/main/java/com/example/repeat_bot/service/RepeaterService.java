@@ -32,8 +32,8 @@ public class RepeaterService {
 
     /**
      * This method is invoked to process call back from VK
-     * @param callbackDto {@link CallbackDto} request body sent from VK
-     * @return callback callbackReceiver String as required by VK if callback not confirmed, while "ok" upon callBackProcessor completed
+     * @param callbackDto {@link CallbackDto} response sent from VK
+     * @return callback confirmation String as required by VK if callback not confirmed, while "ok" upon callBackProcessor completed
      */
     public String callBackProcessor(CallbackDto callbackDto) {
         String responseString;
